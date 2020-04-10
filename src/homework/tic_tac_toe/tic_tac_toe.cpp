@@ -67,17 +67,6 @@ bool TicTacToe::game_over()
 	return false;
 }
 
-
-void TicTacToe::display_board() const
-{
-	cout << "\n";
-	for (int i = 0; i < 9; i += 3)
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-		
-	}
-}
-
 void TicTacToe::set_next_player()
 {
 	if (player == "X")
@@ -207,24 +196,25 @@ void TicTacToe::set_winner()
 	}
 	else if (player == "O")
 	{
-		winner == "X";
+		winner = "X";
 	}
 }
 std::ostream & operator<<(std::ostream & out, TicTacToe& c)
 {
 	out << "\n";
 
-	for (std::size_t i = 0; i < 9; i += 3) {
-		out << c.pegs[i] << " | " << c.pegs[i + 1] << " | " << c.pegs[i + 2] << "\n";
+	for (std::size_t i = 0; i < 9; i += 3) 
+	{
+		out << c.pegs[i] << "|" << c.pegs[i + 1] << "|" << c.pegs[i + 2] << "\n";
 	}
 	return out;
 }
 
 std::istream & operator>>(std::istream & in, TicTacToe & c)
 {
-	int board_selection;
-	cout << "Mark the board using 1-9 \n";
-	in >> board_selection;
-	c.mark_board(board_selection);
+	cout << "Enter a position between 1 and 9: ";
+	int position;
+	in >> position;
+	c.mark_board(position);
 	return in;
 }

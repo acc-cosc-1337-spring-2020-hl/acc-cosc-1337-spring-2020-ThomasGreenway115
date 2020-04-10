@@ -30,8 +30,6 @@ public:
 
 	bool game_over();
 
-	void display_board()const;
-
 	string get_winner() { return winner; };
 
 	friend std::ostream& operator<<(std::ostream& out, TicTacToe& c);
@@ -55,6 +53,6 @@ private:
 
 	void set_winner();
 
-	string winner;
+	string winner = "";
 };
 #endif //!TIC_TAC_TOE_H
