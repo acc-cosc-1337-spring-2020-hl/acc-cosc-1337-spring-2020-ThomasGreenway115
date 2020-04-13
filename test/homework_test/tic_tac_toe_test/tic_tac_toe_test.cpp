@@ -217,19 +217,21 @@ TEST_CASE("Test for no winner")
 	REQUIRE(game.game_over() == false);
 	game.mark_board(1);//X
 	REQUIRE(game.game_over() == false);
-	game.mark_board(2);//O
+	game.mark_board(3);//O
 	REQUIRE(game.game_over() == false);
-	game.mark_board(5);//X
+	game.mark_board(2);//X
 	REQUIRE(game.game_over() == false);
-	game.mark_board(7);//O
+	game.mark_board(4);//O
 	REQUIRE(game.game_over() == false);
-	game.mark_board(4);//X
+	game.mark_board(6);//X
+	REQUIRE(game.game_over() == false);
+	game.mark_board(5);//O
+	REQUIRE(game.game_over() == false);
+	game.mark_board(7);//X
 	REQUIRE(game.game_over() == false);
 	game.mark_board(8);//O
 	REQUIRE(game.game_over() == false);
-	game.mark_board(3);//X
-	REQUIRE(game.game_over() == false);
-	game.mark_board(9);//O
+	game.mark_board(9);//X
 	REQUIRE(game.get_winner() == "C");
 	REQUIRE(game.game_over() == true);
 

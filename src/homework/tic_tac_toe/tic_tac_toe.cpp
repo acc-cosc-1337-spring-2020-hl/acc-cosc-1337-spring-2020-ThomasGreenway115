@@ -46,24 +46,25 @@ bool TicTacToe::game_over()
 {
 	if (check_column_win() == true)
 	{
+		set_winner();
 		return true;
 	}
 	else if (check_diagonal_win() == true)
 	{
+		set_winner();
 		return true;
 	}
 	else if (check_row_win() == true)
 	{
+		set_winner();
 		return true;
 	}
-	else if(check_row_win() == false && check_diagonal_win() == false && check_column_win() == false)
+	else if(check_row_win() == false && check_diagonal_win() == false && check_column_win() == false && check_board_full())
 	{
 		winner = "C";
-	}
-	else if (check_board_full() == true)
-	{
 		return true;
 	}
+
 	return false;
 }
 
