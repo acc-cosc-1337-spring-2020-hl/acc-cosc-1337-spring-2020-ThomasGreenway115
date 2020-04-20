@@ -10,7 +10,7 @@ else
 false
 */
 
-bool TicTacToe3::check_colunm_win()
+bool TicTacToe3::check_column_win()
 {
 	if (pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X")
 	{
