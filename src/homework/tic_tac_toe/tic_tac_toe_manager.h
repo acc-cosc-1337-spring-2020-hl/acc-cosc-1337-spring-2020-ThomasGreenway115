@@ -2,7 +2,7 @@
 #ifndef TIC_TAC_TOE_MANAGER_H
 #define TIC_TAC_TOE_MANAGER_H
 #include"tic_tac_toe.h"
-#include<functional>
+#include<memory>
 using namespace std;
 
 class tic_tac_toe_manager
@@ -10,7 +10,7 @@ class tic_tac_toe_manager
 public:
 	void save_game(TicTacToe b);
 	friend std::ostream& operator<<(std::ostream& out, const tic_tac_toe_manager& manager);
-	vector <reference_wrapper<TicTacToe >> games;
+	vector unique_ptr<TicTacToe> games;
 private:
 	int x_win = 0;
 	int o_win = 0;

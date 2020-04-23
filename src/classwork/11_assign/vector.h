@@ -7,9 +7,11 @@ class Vector
 public:
 	Vector(size_t sz);
 	Vector(const Vector& v); 
+	Vector& operator=(const Vector& v);
 	size_t Size()const { return size; }
 	int& operator[](int i) { return nums[i]; }
 	int& operator[](int i) const { return nums[i]; }
+	~Vector();//destructor
 private:
 	size_t size;
 	int* nums;
@@ -17,3 +19,4 @@ private:
 
 
 #endif // !MY_VECTOR_H
+void use_vector();
