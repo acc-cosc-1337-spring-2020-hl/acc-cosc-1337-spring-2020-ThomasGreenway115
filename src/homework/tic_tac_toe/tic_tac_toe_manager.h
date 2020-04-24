@@ -8,9 +8,9 @@ using namespace std;
 class tic_tac_toe_manager
 {
 public:
-	void save_game(TicTacToe b);
+	void save_game(unique_ptr<TicTacToe>& b);
 	friend std::ostream& operator<<(std::ostream& out, const tic_tac_toe_manager& manager);
-	vector unique_ptr<TicTacToe> games;
+	vector<unique_ptr<TicTacToe>> games;
 private:
 	int x_win = 0;
 	int o_win = 0;

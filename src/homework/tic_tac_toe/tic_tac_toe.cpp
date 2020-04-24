@@ -118,16 +118,16 @@ void TicTacToe::clear_board()
 
 
 
-//This causes test cases that check for wins to fail which is frustrating bc you said to make these false but didn't explain if you wanted us to connect the tictactoe3 functions to the game_over function.
+
 void TicTacToe::set_winner()
 {
 	if (player == "X")
 	{
-		winner = "O";
+		winner = "X";
 	}
 	else if (player == "O")
 	{
-		winner = "X";
+		winner = "O";
 	}
 }
 std::ostream & operator<<(std::ostream & out, TicTacToe& c)
