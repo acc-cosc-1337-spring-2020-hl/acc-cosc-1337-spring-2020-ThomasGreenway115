@@ -1,6 +1,10 @@
 //cpp
 #include "tic_tac_toe.h"
 using std::cout;
+const vector<string> TicTacToe::get_pegs()
+{
+	return pegs;
+}
 void TicTacToe::start_game(string first_player)
 {
 	if (first_player == "X" || first_player == "O")

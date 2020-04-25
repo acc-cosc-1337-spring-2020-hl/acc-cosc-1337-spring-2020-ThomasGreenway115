@@ -22,7 +22,10 @@ private:
 class TicTacToe
 {
 public:
+	TicTacToe(std::vector<string> p, string win) : pegs{ p }, winner{ win } {};
 	explicit TicTacToe(int size) : pegs{size*size, " " } {}
+
+	const vector<string> get_pegs();
 
 	void start_game(string first_player);
 	
