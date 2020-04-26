@@ -16,7 +16,7 @@ public:
 
 private:
 
-	bool check_colunm_win();
+	bool check_column_win();
 
 	bool check_row_win();
 

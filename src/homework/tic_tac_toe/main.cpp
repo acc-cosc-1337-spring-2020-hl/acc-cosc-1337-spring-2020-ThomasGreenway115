@@ -9,7 +9,7 @@ using std::cout; using std::cin; using std::string;
 
 int main()
 {
-	unique_ptr<tic_tac_toe_manager> gamemanager;
+	unique_ptr<tic_tac_toe_manager> gamemanager = make_unique<tic_tac_toe_manager>();
 	string cont;
 	
 
@@ -62,10 +62,10 @@ int main()
 
 		} while (!game1->game_over());
 
+		cout << "\nWinner: " << game1->get_winner() << "\n";
 		gamemanager->save_game(game1);
 		cout << *gamemanager;
 
-		cout << "\nWinner: " << game1->get_winner() << "\n";
 
 		cout << "Enter Y to play again: ";
 		cin >> cont;

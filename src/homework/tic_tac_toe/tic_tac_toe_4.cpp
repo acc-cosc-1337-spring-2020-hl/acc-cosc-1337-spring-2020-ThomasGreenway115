@@ -12,7 +12,7 @@ else
 false
 */
 
-bool TicTacToe4::check_colunm_win()
+bool TicTacToe4::check_column_win()
 {
 	if (pegs[0] == pegs[4] && pegs[4] == pegs[8] && pegs[8] == pegs[12] && pegs[0] != " ")
 	{
