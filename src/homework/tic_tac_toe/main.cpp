@@ -9,7 +9,7 @@ using std::cout; using std::cin; using std::string;
 
 int main()
 {
-	unique_ptr<tic_tac_toe_manager> gamemanager;
+	unique_ptr<tic_tac_toe_manager> gamemanager = make_unique<tic_tac_toe_manager>();
 	string cont;
 	
 
