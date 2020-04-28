@@ -1,4 +1,5 @@
 #include "vector.h"
+#include "vector.h"
 #include<iostream>
 /*
 Allocated dynamic memory
@@ -45,6 +46,19 @@ Vector & Vector::operator=(const Vector & v)
 
 	return *this;
 }
+/*
+Use move source pointer
+Point move source pointer to nothing
+
+*/
+Vector::Vector(Vector && v) : size{ v.size }, nums{ v.nums }
+{
+	delete nums;
+	nums = v.nums;
+	size = v.size;
+	v.nums = nullptr;
+	v.size = 0;
+}
 
 Vector::~Vector()
 {
@@ -55,4 +69,10 @@ Vector::~Vector()
 void use_vector()
 {
 	Vector v(3);
+}
+
+Vector get_vector()
+{
+	Vector v = Vector(3);
+	return v;
 }

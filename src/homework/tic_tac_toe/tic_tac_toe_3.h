@@ -3,11 +3,11 @@
 #ifndef TIC_TAC_TOE_H_3
 #define TIC_TAC_TOE_H_3
 
-
+using std::string;
 class TicTacToe3 : public TicTacToe
 {
 public:
-	TicTacToe3(std::vector<string> p, string winner);
+	TicTacToe3(std::vector<string> p, string winner) : TicTacToe(p, winner){}
 	
 	TicTacToe3(): TicTacToe(3) {}
 

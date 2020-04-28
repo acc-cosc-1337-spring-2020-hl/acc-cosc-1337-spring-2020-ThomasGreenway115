@@ -1,15 +1,17 @@
 #include "vector.h"
 #include<iostream>
-
+int square(int n)
+{
+	return n * n;
+}
 
 int main() 
 {
-	int* num = new int(5);
-	// use it in code
-	
-	delete num;
-	num = nullptr;
+
+
+
+	Vector v1 = get_vector();
 	return 0;
 
-	use_vector();
+	
 }
