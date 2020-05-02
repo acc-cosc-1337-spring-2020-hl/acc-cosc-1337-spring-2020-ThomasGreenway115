@@ -1,11 +1,20 @@
 #include"tic_tac_toe_manager.h"
+#include"tic_tac_toe_3.h"
 
+tic_tac_toe_manager::tic_tac_toe_manager(TicTacToeData & data)
+{
+	games = data.get_games();
+	for (int i = 0; i < games.size(); i++)
+	{
+		update_winner_count(games.at(i)->get_winner());
+	}
+}
 
 void tic_tac_toe_manager::save_game(unique_ptr<TicTacToe>& game)
 {
 	update_winner_count(game->get_winner());
 	games.push_back(std::move(game));
-
+	destruct.save_pegs(games);
 	
 }
 

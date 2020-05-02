@@ -9,10 +9,10 @@ using std::cout; using std::cin; using std::string;
 
 int main()
 {
-	unique_ptr<tic_tac_toe_manager> gamemanager = make_unique<tic_tac_toe_manager>();
-	string cont;
 	
-
+	string cont;
+	TicTacToeData destruct;
+	unique_ptr<tic_tac_toe_manager> gamemanager = make_unique<tic_tac_toe_manager>(destruct);
 	do
 	{
 		unique_ptr<TicTacToe> game1;
