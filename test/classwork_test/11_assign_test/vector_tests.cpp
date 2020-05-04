@@ -8,16 +8,16 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test class copy w stack variables")
 {
-	Vector v1(5);
-	Vector v2 = v1;
+	Vector<int> v1(5);
+	Vector<int> v2 = v1;
 	v1[2] = 0;
 	REQUIRE(v1.Size() == v2.Size());
 
 }
 TEST_CASE("Test class copy w heap variables")
 {
-	Vector v1(3);
-	Vector v2 = v1;
+	Vector<int> v1(3);
+	Vector<int> v2 = v1;
 
 	REQUIRE(v1.Size() == v2.Size());
 	
@@ -27,8 +27,8 @@ TEST_CASE("Test class copy w heap variables")
 
 TEST_CASE("Test class copy w 2 instances of vector")
 {
-	Vector v1(3);
-	Vector v2(3);
+	Vector<double> v1(3);
+	Vector<double> v2(3);
 	v2 = v1;
 	v1[1] = 1;
 
@@ -38,14 +38,14 @@ TEST_CASE("Test class copy w 2 instances of vector")
 }
 TEST_CASE("Test vector capacity with reserve function call")
 {
-	Vector v(3);
-	REQUIRE(v.Capacity() == 0);
+	Vector<int> v(3);
+	REQUIRE(v.Capacity() == 3);
 	v.Reserve(6);
 	REQUIRE(v.Capacity() == 6);
 }
 TEST_CASE("Test vector resize value copied and initialized")
 {
-	Vector v(3);
+	Vector<int> v(3);
 	v[1] = 1;
 	v.Resize(6);
 	REQUIRE(v[0] == 1);
@@ -55,4 +55,14 @@ TEST_CASE("Test vector resize value copied and initialized")
 	REQUIRE(v[4] == 0);
 	REQUIRE(v[5] == 0);
 	
+}
+
+TEST_CASE("Test vector pushback with our default constructor")
+{
+	Vector <double> v;
+	v.Push_Back(5);
+
+	REQUIRE(v.Capacity() == 8);
+	REQUIRE(v[0] == 5);
+
 }
