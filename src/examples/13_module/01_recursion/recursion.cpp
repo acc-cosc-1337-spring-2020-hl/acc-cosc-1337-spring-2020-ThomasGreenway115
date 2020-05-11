@@ -10,8 +10,9 @@ void display(int n)
 		return;
 	}
 
-	std::cout << "hello\n";
+	std::cout << "load stack\n";
 	display(n-1);
+	std::cout << "unload stack\n";
 }
 
 int factorial(int n) 
